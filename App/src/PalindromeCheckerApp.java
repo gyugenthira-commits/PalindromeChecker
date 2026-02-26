@@ -5,18 +5,16 @@ public class PalindromeCheckerApp {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter a string: ");
         String input=sc.nextLine();
-        int length=input.length();
-        boolean isPalindrome = true;
-        for(int i=0;i<length/2;i++) {
-            if (input.charAt(i) != input.charAt(length-i-1)) {
-                isPalindrome=false;
-                break;
-            }
+        String rev="";
+        for (int i=input.length()-1;i>=0;i--)
+            rev+=input.charAt(i);
+        System.out.println("The reversed string is: ");
+        System.out.println(rev);
+        if (input.equals(rev)) {
+            System.out.println("It is a palindrome");
         }
-        if (isPalindrome) {
-            System.out.println("It is a Palindrome");
-        } else {
-            System.out.println("Not a Palindrome");
+        else {
+            System.out.println("Not a palindrome");
         }
         sc.close();
     }
